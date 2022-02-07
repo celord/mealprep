@@ -1,17 +1,5 @@
 from django.db import models
-
-
-class TimeStampedModel(models.Model):
-    """
-    An abstract base class model that provides self-updating
-    ``created_at`` and ``updated_at`` fields.
-    """
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
+from django_extensions.db.models import TimeStampedModel
 
 
 class FoodType(TimeStampedModel):
@@ -86,3 +74,6 @@ class Plan(TimeStampedModel):
     photo = models.ImageField(
         blank=True, null=True
     )  # Signals auto update with Lunch, Dinner or BF
+
+    def __str__(self) -> str:
+        return f"{self.mealtype} for {self.date} "
