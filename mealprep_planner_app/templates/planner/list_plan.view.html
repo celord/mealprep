@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block content %} {% for plan in plans %}
+<div class="container">
+    <div class="h4">{{ plan.date|date:"l" }}</div>
+    <div class="h4">{{ plan.meal }}</div>
+</div>
+{% endfor %} {% endblock content %}

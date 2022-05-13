@@ -276,3 +276,4 @@ mealprep_planner_app/media/
 .env
 .envs/*
 !.envs/.local/
+.editorconfig
